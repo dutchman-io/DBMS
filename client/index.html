@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
     <link rel ="stylesheet"  href ="stylesheet.css">
-    <title>dbm</title>
+    <title>LINK</title>
 </head>
 <body>
     <main>
         <label>Name:</label>
-        <input type = "text" id ="name_input">
-        <button id ="add_name _btn">Add Name</button>
+        <input type = "text" id ="name-input">
+        <button id ="add-name-btn">Add Name</button>
         <br><br><br>
 
         <div>
-            <input placeholder ="search by name" id = search_input>
-            <button id = "search_btn">search</button>
-        </div> 
+            <input placeholder ="search by name" id = "search-input">
+            <button id = "search-btn">search</button>
+        </div>
+        
+        
         <table id ="table">
             <thead>
                 <th>ID</th>
@@ -25,11 +27,14 @@
                 <th>Delete</th>
                 <th>Edit</th>
             </thead>
-            <tbody>
-                
-            </tbody>
+            <tbody></tbody>
         </table>
+        <section hidden id ="update-row">
+            <lable> Name</lable>
+            <input type ="text" id = "update-name-input">
+            <button id = "update"> update</button>
+        </section>
     </main>
-    <scritp src ="index.js"></scripts>
+    <script src ="index.js"></script>
 </body>
 </html> 

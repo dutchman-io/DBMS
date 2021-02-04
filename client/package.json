@@ -1,0 +1,11 @@
+{
+  "name": "development",
+  "version": "1.0.0",
+  "description": "Freya",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('success')"
+  },
+  "author": "Ehis Fidelis",
+  "license": "ISC"
+}
