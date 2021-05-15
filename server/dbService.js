@@ -68,19 +68,57 @@ class DbService {
     
     async deleteRowById(id) {
         try {
-            id = parseInt(id,10);
+            id = parseInt(id, 10);
             const response = await new Promise((resolve, reject) => {
-                 const query = "delete from names WHERE id = ?;"; 
+                 const query = "delete from names WHERE id = ?"; 
     
-                connection.query(query,[id,], (err, result) => {
+                connection.query(query, [id], (err, result) => {
                     if (err) reject(new Error(err.message));
                     resolve(result.affectedrows);  
                 })
             });
-            return response === 1 ? true :false;  
+            return response === 1 ? true : false;  
         } catch (error){ 
             console.log(error);
             return false;
+        }
+    } 
+    async updateNameById(id, name){
+        try{
+            id = parseInt(id, 10);
+            //name = toString(name);
+            //console.log(result);
+            const response = await new Promise((resolve, reject)=> {
+                const query ="update names set name = ? where id = ?;";
+                
+                connection.query(query, [name, id], (err, result)=> {
+                    if (err) reject(new Error(err.message));
+                    resolve(result);
+                })
+            });
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+            return false;
+
+        }
+    }
+    async searchByName(name){
+        try{
+            const response = await new Promise((resolve, reject) => {
+                const query = "select * from names were name =?"; 
+
+                connection.query(query, [name], (err, results) => {
+                    if (err) reject(new Error(err.message));
+                    resolve(results.affectedrows);  
+                })
+            });
+           
+           // console.log(response);
+            return response ===1 ? true: false;
+
+        }catch (error){
+            console.log(error);
         }
     }
 }
