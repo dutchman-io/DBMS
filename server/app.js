@@ -13,12 +13,7 @@ app.use(express.urlencoded({extended : false}));
 app.post('/insert', (request, response) => {
     const {name} = request.body;
     const db = dbService.getDbServiceInstance();
-
-//     const result = db.insertNewName(name);
-//     result
-//     .then(data => response.json({data: data}))
-//     .catch(err => console.log(err));
-});
+})
 
 //reading api
 app.get('/getAll', (request, response) => {
@@ -47,7 +42,7 @@ app.patch('/update', (request, response)=>{
 });
 
 //delete deleting api
-app.delete('/delete/:id', (request, response) =>{
+app.delete('/delete/:id', (request, response) => {
     const {id} = request.params;
     const db = dbService.getDbServiceInstance();
 
